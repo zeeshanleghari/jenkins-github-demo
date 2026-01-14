@@ -1,62 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
 
 :root {
-    --bg-color: #0f172a;
-    --card-bg: rgba(30, 41, 59, 0.7);
+    --bg-color: #030712;
     --primary-blue: #3b82f6;
-    --text-slate: #94a3b8;
+    --glass-bg: rgba(255, 255, 255, 0.03);
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-color);
     color: #f8fafc;
-    overflow-x: hidden;
 }
 
-/* Glassmorphism Card */
+/* Modern Glassmorphism */
 .glass {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .glass:hover {
+    background: rgba(255, 255, 255, 0.06);
     border-color: var(--primary-blue);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
 }
 
-/* Hero Background Gradient */
-.hero-gradient {
-    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, var(--bg-color) 100%);
+/* Custom Buttons */
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.5);
 }
 
-/* Animated Blobs */
+.btn-primary:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.social-btn:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: rotate(10deg);
+}
+
+/* Tech Badges */
+.tech-badge {
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Nav Links */
+.nav-link {
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: var(--primary-blue);
+    letter-spacing: 0.4em;
+}
+
+/* Background Blobs */
 .blob {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    filter: blur(80px);
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    filter: blur(120px);
     border-radius: 50%;
     z-index: -1;
-    opacity: 0.15;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-color); }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: var(--primary-blue); }
-
-/* Tech Badge */
-.tech-badge {
-    background: rgba(59, 130, 246, 0.1);
-    color: #60a5fa;
-    padding: 4px 12px;
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    opacity: 0.1;
+    pointer-events: none;
 }
