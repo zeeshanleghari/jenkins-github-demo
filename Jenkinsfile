@@ -13,9 +13,10 @@ pipeline {
             }
         }
         stage("Deploy") {
-            steps {
-                echo "Deploying the application..."
-            }
+                 steps {
+        sh "cp -r * /var/www/html/"
+    }
+
         }
     }
 }
